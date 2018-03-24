@@ -1,21 +1,26 @@
-y :: String -> String
-y x | x == "eia?" = "e feli o no e feli?"
-	|True = ""
-	
-f :: Num a => a -> a 
+--- Ejercicio 10
+f :: Int a => a -> a 
 f x = x * 5
 
-duplica :: Num a => a -> a   
-duplica x = x * 2
+duplica :: Int a => a -> a   
+duplica x = x + x
 
-multiplicar :: Num a => a -> a -> a
+multiplicar :: Int a => a -> a -> a
 multiplicar x y = x*y
 
-por2 :: Num a => a -> a
-por2 x = x + x
+por2 :: Int a => a -> a
+por2 x = x * 2
 
+---Ejercicio 11
 promedio :: Float -> Float -> Float
 promedio x y = (x+y)/2 
+
+---Ejercicio 16
+
+signo :: Int -> String 
+signo x | x>0 = "Positivo"
+		| x<0 = "Negativo"
+		| x==0 = "Cero"
 
 entre0y9 :: Int -> Bool
 entre0y9 x | x>=0 && x<=9 = True
@@ -34,14 +39,6 @@ esMultiplo2 :: Int -> Bool
 esMultiplo2 x | mod x 2 == 0 = True
 	          | True = False 
 
-
--- Funcion Signo
-signo :: Int -> String 
-signo x | x>0 = "Positivo"
-		| x<0 = "Negativo"
-		| x==0 = "Cero"
-
- 
 -- ejercicio 17 
 esMultiploDe :: Int -> Int -> Bool
 esMultiploDe x y | mod x y == 0 = True
