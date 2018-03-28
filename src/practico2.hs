@@ -31,4 +31,4 @@ duplica (x:xs) = (x*2):duplica xs
 -- c)
 multiplica :: Int -> [Int] -> [Int]
 multiplica a [] = []
-multiplica a (x:xs) = (a*x):multiplica xs
+multiplica a (x:xs) = (a*x):multiplica a xs
