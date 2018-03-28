@@ -1,4 +1,4 @@
---Ejercicio 3 (Funciones Filter)
+---Ejercicio 3 (Funciones Filter)
 -- a)
 soloPares :: [Int] -> [Int]
 soloPares [] = []
@@ -17,7 +17,7 @@ mayoresQue a [] = []
 mayoresQue a (x:xs) | (x>a) = x:mayoresQue a xs
                     | True = mayoresQue a xs
 
---Ejercicio 4 (Funciones Map)
+---Ejercicio 4 (Funciones Map)
 -- a)
 sumar1 :: [Int] -> [Int]
 sumar1 [] = []
@@ -32,3 +32,30 @@ duplica (x:xs) = (x*2):duplica xs
 multiplica :: Int -> [Int] -> [Int]
 multiplica a [] = []
 multiplica a (x:xs) = (a*x):multiplica a xs
+
+---Ejercicio 5 (Funciones Fold)
+-- a)
+todosMenores10 :: [Int] -> Bool
+todosMenores10 [] = True
+todosMenores10 (x:xs) | x<10 = True && todosMenores10 xs
+                      | True = False && todosMenores10 xs
+
+-- b) 
+hay0 :: [Int] -> Bool
+hay0 [] = False
+hay0 (x:xs) | x == 0 = True 
+            | x /= 0 = hay0 xs 
+
+-- c)
+sumDeLista :: [Int] -> Int
+sumDeLista [] = 0
+sumDeLista (x:xs) = x + sum xs 
+
+---Ejercicio 6 (Funciones Zip)
+-- a)
+
+
+
+
+
+             
