@@ -1,3 +1,8 @@
+{--
+En este archivo se listan todos los ejercicios de todos los practicos,
+cada practico esta separado individualmente tambien en distintos archivos
+--}
+
 --- Ejercicio 10
 f :: Int a => a -> a 
 f x = x * 5
