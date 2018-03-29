@@ -1,3 +1,9 @@
+Estructura del repo:
+======
+* PDF: todos los pdfs relacionados con la materia
+* src: archivos en comun con las actividades escritas en Haskell, creadas y editadas por todos los contribuyentes
+* archivos: aca podes dejar algun archivo personal, para tener facil acceso a el desde el lab
+
 Como contribuir:
 ======
 * Basicamente hay 2 branchs activas todo el tiempo:
