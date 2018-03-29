@@ -80,7 +80,7 @@ rangoPrecioParametrizado x (y,z) | x<0 = "Sos pelotudo"
 								 | x>y && x<z = "De una waso"
 								  
 mayor3 :: (Int, Int, Int) -> (Bool, Bool,Bool)
-mayor3 (x,y,z) = (x>3,y>3,z>3)		
+mayor3 (x,y,z) = (x>3,y>3,z>3) 
 
 todosIguales :: (Int, Int, Int) -> Bool
 todosIguales (x,y,z) = x==z && x==y 
