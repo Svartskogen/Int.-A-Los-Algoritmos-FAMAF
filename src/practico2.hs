@@ -52,13 +52,32 @@ sumDeLista [] = 0
 sumDeLista (x:xs) = x + sum xs 
 
 ---Ejercicio 6 (Funciones Zip)
--- a)
 repartir ::  [String] -> [String] -> [(String, String)]
-repartir [] [] = []
-repartir (x:xs) [] = []
-repartir [] (x:xs) = []
+repartir xs [] = []
+repartir [] xs = []
 repartir (x:xs) (y:ys) = (x,y) :(repartir xs ys)
 
+--- Ejercicio 7 (Funciones Unzip)
+apellidos :: [(String, String, Int)] -> [String]
+apellidos [] = []
+apellidos ((x,y,z):xs) = y:apellidos xs
 
+--- Ejercicio 8
+cardinal :: [a] -> Int
+cardinal [] = 0
+cardinal (x:xs) = 1 + cardinal xs
 
+indice :: [a] -> Int -> a
+indice (x:xs) 0 = x
+indice (x:xs) n = indice xs (n-1)
+
+pegarFinal :: [a] -> a -> [a]
+pegarFinal [] y = []
+pegarFinal x y = x++(y:[])
+
+--tomar :: [a] -> Int -> [a]
+
+--tirar :: [a] -> Int -> [a]
+
+--concatenar :: [a] -> [a] -> [a]
              
