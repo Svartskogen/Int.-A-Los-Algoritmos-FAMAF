@@ -53,8 +53,11 @@ sumDeLista (x:xs) = x + sum xs
 
 ---Ejercicio 6 (Funciones Zip)
 -- a)
-
-
+repartir ::  [String] -> [String] -> [(String, String)]
+repartir [] [] = []
+repartir (x:xs) [] = []
+repartir [] (x:xs) = []
+repartir (x:xs) (y:ys) = (x,y) :(repartir xs ys)
 
 
 
