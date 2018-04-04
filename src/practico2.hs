@@ -71,13 +71,28 @@ indice :: [a] -> Int -> a
 indice (x:xs) 0 = x
 indice (x:xs) n = indice xs (n-1)
 
+--pegarFinal :: [a] -> a -> [a] alt
+--pegarFinal [] y = [y]
+--pegarFinal x y = x++(y:[])
+
 pegarFinal :: [a] -> a -> [a]
-pegarFinal [] y = []
-pegarFinal x y = x++(y:[])
+pegarFinal [] y = [y]
+pegarFinal (x:xs) y = x:(pegarFinal xs y)
 
---tomar :: [a] -> Int -> [a]
+tomar :: [a] -> Int -> [a]
+tomar [] n = []
+tomar xs 0 = []
+tomar (x:xs) n = x:tomar xs(n-1)
 
---tirar :: [a] -> Int -> [a]
+tirar :: [a] -> Int -> [a]
+tirar [] n = []
+tirar xs 0 = xs
+tirar (x:xs) n = tirar xs (n-1)
 
---concatenar :: [a] -> [a] -> [a]
-             
+concatenar :: [a]->[a]->[a]
+concatenar [] ys = ys
+concatenar (x:xs) (y:ys) = x:concatenar xs(y:ys)
+
+concatenar2 :: [a]->[a]->[a]
+concatenar2 xs [] = xs
+concatenar2 (xs) (y:ys) = concatenar2(pegarFinal xs y)  ys
