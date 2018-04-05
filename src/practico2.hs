@@ -52,10 +52,47 @@ sumDeLista [] = 0
 sumDeLista (x:xs) = x + sum xs 
 
 ---Ejercicio 6 (Funciones Zip)
--- a)
+repartir ::  [String] -> [String] -> [(String, String)]
+repartir xs [] = []
+repartir [] xs = []
+repartir (x:xs) (y:ys) = (x,y) :(repartir xs ys)
 
+--- Ejercicio 7 (Funciones Unzip)
+apellidos :: [(String, String, Int)] -> [String]
+apellidos [] = []
+apellidos ((x,y,z):xs) = y:apellidos xs
 
+--- Ejercicio 8
+cardinal :: [a] -> Int
+cardinal [] = 0
+cardinal (x:xs) = 1 + cardinal xs
 
+indice :: [a] -> Int -> a
+indice (x:xs) 0 = x
+indice (x:xs) n = indice xs (n-1)
 
+--pegarFinal :: [a] -> a -> [a] alt
+--pegarFinal [] y = [y]
+--pegarFinal x y = x++(y:[])
 
-             
+pegarFinal :: [a] -> a -> [a]
+pegarFinal [] y = [y]
+pegarFinal (x:xs) y = x:(pegarFinal xs y)
+
+tomar :: [a] -> Int -> [a]
+tomar [] n = []
+tomar xs 0 = []
+tomar (x:xs) n = x:tomar xs(n-1)
+
+tirar :: [a] -> Int -> [a]
+tirar [] n = []
+tirar xs 0 = xs
+tirar (x:xs) n = tirar xs (n-1)
+
+concatenar :: [a]->[a]->[a]
+concatenar [] ys = ys
+concatenar (x:xs) (y:ys) = x:concatenar xs(y:ys)
+
+concatenar2 :: [a]->[a]->[a]
+concatenar2 xs [] = xs
+concatenar2 (xs) (y:ys) = concatenar2(pegarFinal xs y)  ys
