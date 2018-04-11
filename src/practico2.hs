@@ -144,3 +144,12 @@ listasIguales (x:xs) (y:ys) = (x==y) && (listasIguales xs ys)
 mejorNota :: [(String,Int,Int,Int)] -> [(String,Int)]
 mejorNota [] = []
 mejorNota ((name,x,y,z):xs) = (name,(max x (max y z))) :mejorNota xs
+
+incPrim :: [(Int,Int)] -> [(Int,Int)]
+incPrim [] = []
+incPrim ((x,y):xs) = ((x+1),y):(incPrim xs)
+
+expandir :: String -> String
+expandir [] = []
+expandir (x:xs) = x : " " ++ (expandir xs)
+--TODO: sacar espacio del final
