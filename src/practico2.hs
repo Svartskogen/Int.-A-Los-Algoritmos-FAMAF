@@ -134,3 +134,13 @@ concatldl (x:xs) = x++(concatldl xs)
 rev :: [a] -> [a]
 rev [] = []
 rev (x:xs) = pegarFinal (rev xs) x
+
+
+--Ejercicio 21
+listasIguales :: Eq a => [a] -> [a] -> Bool
+listasIguales [] [] = True
+listasIguales (x:xs) (y:ys) = (x==y) && (listasIguales xs ys)
+
+mejorNota :: [(String,Int,Int,Int)] -> [(String,Int)]
+mejorNota [] = []
+mejorNota ((name,x,y,z):xs) = (name,(max x (max y z))) :mejorNota xs
