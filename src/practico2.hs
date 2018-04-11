@@ -96,3 +96,24 @@ concatenar (x:xs) (y:ys) = x:concatenar xs(y:ys)
 concatenar2 :: [a]->[a]->[a]
 concatenar2 xs [] = xs
 concatenar2 (xs) (y:ys) = concatenar2(pegarFinal xs y)  ys
+
+
+--Ejercicio 9
+maximo :: [Int] -> Int
+maximo [] = 0
+maximo (x:xs) | x > maximo (xs) = x
+              | x < maximo (xs) = maximo (xs)
+
+sumaPares :: [(Int,Int)] -> Int
+sumaPares [] = 0
+sumaPares ((x,y):xs) = (x+y) + sumaPares xs
+
+todos0y1 :: [Int] -> Bool
+todos0y1 [] = True
+todos0y1 (x:xs) = ((x==1) || (x==0)) && todos0y1 xs
+
+quitar0s :: [Int] -> [Int]
+quitar0s [] = []
+quitar0s (x:xs) | (x == 0) = quitar0s xs
+                | True = x:quitar0s xs 
+                --true es similar a usar "otherwise", ya que si no pasa lo primero, lo segundo es siempre falso
