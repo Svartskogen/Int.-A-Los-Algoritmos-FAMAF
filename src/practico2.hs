@@ -117,3 +117,20 @@ quitar0s [] = []
 quitar0s (x:xs) | (x == 0) = quitar0s xs
                 | True = x:quitar0s xs 
                 --true es similar a usar "otherwise", ya que si no pasa lo primero, lo segundo es siempre falso
+
+ultimo :: [a] -> a
+--ultimo [] = --indefinido que devolver en caso de lista vacia
+ultimo (x:[]) = x
+ultimo (x:xs) = ultimo xs
+
+repetir :: Int -> Int -> [Int]
+repetir k 0 = []
+repetir k n = k : repetir k (n-1)
+
+concatldl :: [[a]] -> [a]
+concatldl [[]] = []
+concatldl [a,b] = a:(concat [b])
+
+rev :: [a] -> [a]
+rev [] = []
+rev (x:xs) = pegarFinal (rev xs) x
