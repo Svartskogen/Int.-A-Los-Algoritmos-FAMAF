@@ -128,8 +128,8 @@ repetir k 0 = []
 repetir k n = k : repetir k (n-1)
 
 concatldl :: [[a]] -> [a]
-concatldl [[]] = []
-concatldl [a,b] = a:(concat [b])
+concatldl [] = []
+concatldl (x:xs) = x++(concatldl xs)
 
 rev :: [a] -> [a]
 rev [] = []
